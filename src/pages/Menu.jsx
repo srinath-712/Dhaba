@@ -75,27 +75,27 @@ export default function Menu() {
           <img
             src="/images/banner.jpg"
             alt="Hotel Sri Punjab's Dhaba"
-            className="w-full h-[260px] md:h-[320px] object-cover object-center"
+            className="w-full h-[180px] sm:h-[260px] md:h-[320px] object-cover object-center"
             loading="lazy"
             onError={(e) => { e.target.src = '/images/banner.png' }}
           />
           <div className="absolute inset-0 bg-charcoal-950/50" />
           <div className="absolute inset-0 flex items-center justify-center px-16">
             <div
-              className="text-center px-32 py-24 rounded-2xl border border-white/20 shadow-2xl"
+              className="text-center px-16 py-16 md:px-32 md:py-24 rounded-2xl border border-white/20 shadow-2xl"
               style={{
                 background: 'rgba(20, 16, 12, 0.45)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
               }}
             >
-              <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-saffron-400 mb-8 block">
+              <span className="text-[10px] md:text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-saffron-400 mb-6 block">
                 Traditional Menu
               </span>
-              <h2 className="text-[32px] md:text-[44px] font-serif font-bold text-white leading-tight">
+              <h2 className="text-[24px] md:text-[44px] font-serif font-bold text-white leading-tight">
                 Explore Our Delicacies
               </h2>
-              <p className="text-[14px] md:text-[16px] text-cream-300 font-sans mt-8 max-w-xl">
+              <p className="hidden sm:block text-[13px] md:text-[16px] text-cream-300 font-sans mt-8 max-w-xl">
                 Slow-cooked tandoori naans, rich creamy butter chicken, spicy black pepper country recipes.
               </p>
             </div>

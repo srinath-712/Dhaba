@@ -60,43 +60,67 @@ export function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative h-full min-h-[450px] w-full mt-32 lg:mt-0"
+          className="relative w-full mt-32 lg:mt-0"
         >
-          {/* Main Back Image — parallax upward */}
-          <div className="absolute top-0 right-0 w-[75%] rounded-2xl overflow-hidden shadow-2xl border-[6px] border-charcoal-900 aspect-[4/3] bg-charcoal-800 z-10">
-            <motion.img
-              src="/images/tandoor.png"
-              alt="Naan in Tandoor"
-              className="w-full h-[115%] object-cover"
-              style={{ y: backImgY }}
-              loading="lazy"
-              onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1585938338392-50a592202c72?w=800&auto=format&fit=crop&q=80' }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent" />
-            <div className="absolute bottom-16 right-24 text-right text-white">
-              <p className="text-[12px] uppercase font-semibold text-turmeric-400 tracking-wider drop-shadow-md">Traditional Clay Oven</p>
+          {/* On mobile: simple stacked images. On lg: overlapping parallax */}
+          <div className="block lg:hidden space-y-16">
+            <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-[4px] border-charcoal-900 aspect-[4/3] bg-charcoal-800">
+              <img
+                src="/images/tandoor.png"
+                alt="Naan in Tandoor"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1585938338392-50a592202c72?w=800&auto=format&fit=crop&q=80' }}
+              />
+            </div>
+            <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-[4px] border-charcoal-900 aspect-[4/3] bg-charcoal-800">
+              <img
+                src="/images/tandoor 2.jpg"
+                alt="Tandoori Skewers"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544025162-81134a6212e5?w=800&auto=format&fit=crop&q=80' }}
+              />
             </div>
           </div>
 
-          {/* Secondary Front Image — parallax downward */}
-          <div className="absolute bottom-0 left-0 w-[60%] rounded-2xl overflow-hidden shadow-2xl border-[6px] border-charcoal-900 aspect-square bg-charcoal-800 z-20">
-            <motion.img
-              src="/images/tandoor 2.jpg"
-              alt="Tandoori Skewers"
-              className="w-full h-[115%] object-cover"
-              style={{ y: frontImgY }}
-              loading="lazy"
-              onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544025162-81134a6212e5?w=800&auto=format&fit=crop&q=80' }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent" />
-            <div className="absolute bottom-16 left-16 text-white">
-              <h3 className="text-[18px] font-serif font-bold drop-shadow-md">Smokey Specialties</h3>
+          {/* Desktop: overlapping parallax layout */}
+          <div className="hidden lg:block relative min-h-[450px]">
+            {/* Main Back Image */}
+            <div className="absolute top-0 right-0 w-[75%] rounded-2xl overflow-hidden shadow-2xl border-[6px] border-charcoal-900 aspect-[4/3] bg-charcoal-800 z-10">
+              <motion.img
+                src="/images/tandoor.png"
+                alt="Naan in Tandoor"
+                className="w-full h-[115%] object-cover"
+                style={{ y: backImgY }}
+                loading="lazy"
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1585938338392-50a592202c72?w=800&auto=format&fit=crop&q=80' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent" />
+              <div className="absolute bottom-16 right-24 text-right text-white">
+                <p className="text-[12px] uppercase font-semibold text-turmeric-400 tracking-wider drop-shadow-md">Traditional Clay Oven</p>
+              </div>
+            </div>
+            {/* Secondary Front Image */}
+            <div className="absolute bottom-0 left-0 w-[60%] rounded-2xl overflow-hidden shadow-2xl border-[6px] border-charcoal-900 aspect-square bg-charcoal-800 z-20">
+              <motion.img
+                src="/images/tandoor 2.jpg"
+                alt="Tandoori Skewers"
+                className="w-full h-[115%] object-cover"
+                style={{ y: frontImgY }}
+                loading="lazy"
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544025162-81134a6212e5?w=800&auto=format&fit=crop&q=80' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent" />
+              <div className="absolute bottom-16 left-16 text-white">
+                <h3 className="text-[18px] font-serif font-bold drop-shadow-md">Smokey Specialties</h3>
+              </div>
             </div>
           </div>
 
           {/* Accent decoration */}
-          <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-saffron-500 rounded-2xl -z-10 opacity-20" />
-          <div className="absolute top-[20%] -left-12 w-48 h-48 bg-turmeric-500 rounded-full -z-10 opacity-20 blur-xl" />
+          <div className="hidden lg:block absolute -bottom-12 -right-12 w-64 h-64 bg-saffron-500 rounded-2xl -z-10 opacity-20" />
+          <div className="hidden lg:block absolute top-[20%] -left-12 w-48 h-48 bg-turmeric-500 rounded-full -z-10 opacity-20 blur-xl" />
         </motion.div>
       </div>
     </section>
