@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "branchSlug": "kovur",
+    "author": "Rajesh Kumar",
+    "rating": 5,
+    "date": "2026-05-15",
+    "comment": "Absolutely the best Butter Chicken in Kovur! The Butter Naan was huge, warm, and extremely buttery. Proper authentic taste!"
+  },
+  {
+    "id": 2,
+    "branchSlug": "kovur",
+    "author": "Priya Adhikesavan",
+    "rating": 4,
+    "date": "2026-06-02",
+    "comment": "Nice family atmosphere. The Paneer Butter Masala was very creamy. Clean seating area and quick service."
+  },
+  {
+    "id": 3,
+    "branchSlug": "gingee",
+    "author": "Anand S.",
+    "rating": 4,
+    "date": "2026-04-18",
+    "comment": "Awesome highway stop! We stopped on our way to Tiruvannamalai. Spicy Pepper Chicken and hot Rotis are highly recommended!"
+  },
+  {
+    "id": 4,
+    "branchSlug": "gingee",
+    "author": "Deepika Murugan",
+    "rating": 3,
+    "date": "2026-06-11",
+    "comment": "Traditional dhaba vibes, outdoor style. Dal Fry was decent, but can get quite crowded on weekends. Good pricing."
+  },
+  {
+    "id": 5,
+    "branchSlug": "tiruvannamalai",
+    "author": "Karthik Subramaniam",
+    "rating": 4,
+    "date": "2026-05-28",
+    "comment": "Great food after the temple visit. Fast service and authentic Punjabi taste in Tiruvannamalai."
+  },
+  {
+    "id": 6,
+    "branchSlug": "tiruvannamalai",
+    "author": "Meera Krishnan",
+    "rating": 3,
+    "date": "2026-06-08",
+    "comment": "Taste was okay. Mutton Masala was spicy and flavorful. Staff were helpful, but parking was a bit tight."
+  }
+]

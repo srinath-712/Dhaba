@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-saffron-50: #FDE9DC;
+  --color-saffron-100: #FAC9AA;
+  --color-saffron-200: #F49B6A;
+  --color-saffron-400: #E8621A;
+  --color-saffron-500: #E8621A;
+  --color-saffron-700: #C9541A;
+  --color-saffron-800: #9B3A0E;
+  --color-saffron-900: #6B2408;
+
+  --color-turmeric-50: #FEF3DC;
+  --color-turmeric-100: #FDE4A0;
+  --color-turmeric-200: #FAC750;
+  --color-turmeric-400: #F5A623;
+  --color-turmeric-500: #F5A623;
+  --color-turmeric-700: #C47A0A;
+  --color-turmeric-800: #7A4F00;
+  --color-turmeric-900: #4A2E00;
+
+  --color-charcoal-50: #FAF6F0;
+  --color-charcoal-100: #F0EBE3;
+  --color-charcoal-200: #D4CEC6;
+  --color-charcoal-400: #9A9490;
+  --color-charcoal-500: #5E5A57;
+  --color-charcoal-800: #2E2C2A;
+  --color-charcoal-900: #1A1A1A;
+  --color-charcoal-950: #121212;
+
+  --color-cream-50: #FAF6F0;
+  --color-cream-100: #F0EBE3;
+  --color-cream-200: #D4CEC6;
+  --color-cream-300: #9A9490;
+  --color-cream-400: #5E5A57;
+  --color-cream-500: #2E2C2A;
+  --color-cream-800: #1A1A1A;
+
+  --color-tandoor-clay: #8B4513;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: Inter, sans-serif;
+
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-96: 96px;
+  --spacing-120: 120px;
+
+  --animate-fire: fire 2s infinite ease-in-out;
+  --animate-fade-in: fadeIn 0.3s ease-out forwards;
+  --animate-slide-up: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fire {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(232,98,26,0.6)) brightness(1); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(243,168,37,0.8)) brightness(1.2); }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+body {
+  @apply bg-charcoal-900 text-cream-200 font-sans antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif font-medium tracking-wide text-white;
+}
+
+/* Premium Glassmorphic card styling on top of dark charcoal background */
+.glass-card {
+  background: rgba(46, 44, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 98, 26, 0.15);
+}
+
+.glass-card-light {
+  background: rgba(245, 246, 240, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Tandoor flame fire text glow */
+.text-fire-glow {
+  text-shadow: 0 0 10px rgba(232, 98, 26, 0.4), 0 0 20px rgba(245, 166, 35, 0.2);
+}
+
+.box-fire-glow {
+  box-shadow: 0 4px 30px rgba(232, 98, 26, 0.15), 0 8px 40px rgba(245, 166, 35, 0.1);
+}
+
+.box-fire-glow-lg {
+  box-shadow: 0 10px 50px rgba(232, 98, 26, 0.25), 0 20px 80px rgba(245, 166, 35, 0.15);
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-charcoal-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-saffron-500 rounded-full hover:bg-saffron-700 transition-colors;
+}
