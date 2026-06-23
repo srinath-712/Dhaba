@@ -27,7 +27,7 @@ export function ReviewsCarousel() {
   if (testimonials.length === 0) return null
 
   return (
-    <section className="py-80 px-page bg-charcoal-950 text-white overflow-hidden relative">
+    <section className="py-56 px-page bg-charcoal-950 text-white overflow-hidden relative">
       {/* Visual background ember glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-saffron-700/5 blur-[90px] pointer-events-none" />
 
@@ -39,8 +39,56 @@ export function ReviewsCarousel() {
           What Our Foodies Say
         </h2>
 
-        {/* Carousel slide container */}
-        <div className="min-h-[220px] flex items-center justify-center mb-32">
+        {/* --- MOBILE MARQUEE (Hidden on Desktop) --- */}
+        <div className="md:hidden overflow-hidden -mx-page">
+          <div className="flex w-max animate-marquee pl-16 hover:animate-play-paused focus:animate-play-paused">
+            {/* Original Set */}
+            <div className="flex gap-16">
+              {testimonials.map((review, idx) => (
+                <div key={review.id} className="shrink-0 w-[85vw] sm:w-[320px] bg-charcoal-900 border border-charcoal-800/50 p-24 rounded-2xl shadow-xl">
+                  <div className="flex justify-center gap-4 mb-16">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <Star key={i} size={14} className="fill-turmeric-500 text-turmeric-500" />
+                    ))}
+                  </div>
+                  <blockquote className="text-[16px] font-serif italic text-cream-100 leading-relaxed mb-20">
+                    "{review.comment}"
+                  </blockquote>
+                  <cite className="not-italic block border-t border-charcoal-800/50 pt-16 mt-auto">
+                    <span className="font-sans font-bold text-white text-[14px] block">{review.author}</span>
+                    <span className="text-[11px] text-cream-400 font-sans capitalize mt-2 block">
+                      {review.branchSlug} Customer
+                    </span>
+                  </cite>
+                </div>
+              ))}
+            </div>
+            {/* Duplicate Set */}
+            <div className="flex gap-16 ml-16" aria-hidden="true">
+              {testimonials.map((review, idx) => (
+                <div key={`${review.id}-dup`} className="shrink-0 w-[85vw] sm:w-[320px] bg-charcoal-900 border border-charcoal-800/50 p-24 rounded-2xl shadow-xl">
+                  <div className="flex justify-center gap-4 mb-16">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <Star key={i} size={14} className="fill-turmeric-500 text-turmeric-500" />
+                    ))}
+                  </div>
+                  <blockquote className="text-[16px] font-serif italic text-cream-100 leading-relaxed mb-20">
+                    "{review.comment}"
+                  </blockquote>
+                  <cite className="not-italic block border-t border-charcoal-800/50 pt-16 mt-auto">
+                    <span className="font-sans font-bold text-white text-[14px] block">{review.author}</span>
+                    <span className="text-[11px] text-cream-400 font-sans capitalize mt-2 block">
+                      {review.branchSlug} Customer
+                    </span>
+                  </cite>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* --- DESKTOP CAROUSEL (Hidden on Mobile) --- */}
+        <div className="hidden md:block min-h-[220px] mb-32 relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
@@ -73,8 +121,8 @@ export function ReviewsCarousel() {
           </AnimatePresence>
         </div>
 
-        {/* Carousel controls */}
-        <div className="flex justify-center items-center gap-24">
+        {/* Carousel controls (Desktop Only) */}
+        <div className="hidden md:flex justify-center items-center gap-24">
           <button
             onClick={handlePrev}
             className="w-40 h-40 rounded-full border border-cream-200/20 flex items-center justify-center hover:bg-white hover:text-charcoal-900 transition-all text-cream-200"
@@ -101,6 +149,7 @@ export function ReviewsCarousel() {
             className="w-40 h-40 rounded-full border border-cream-200/20 flex items-center justify-center hover:bg-white hover:text-charcoal-900 transition-all text-cream-200"
             aria-label="Next Review"
           >
+
             <ChevronRight size={20} />
           </button>
         </div>

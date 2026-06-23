@@ -78,11 +78,12 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-40 items-start">
           {/* Outlets detail list */}
-          <div className="lg:col-span-5 space-y-24">
+          <div className="lg:col-span-5">
             <h3 className="text-[24px] font-serif font-semibold text-white mb-16">Our Outlets</h3>
-            {branchesData.map((branch) => (
-              <div key={branch.id} className="bg-charcoal-800 p-24 rounded-lg border border-charcoal-800/40 shadow-lg font-sans">
-                <h4 className="text-[18px] font-serif font-bold text-white mb-12">{branch.name}</h4>
+            <div className="flex overflow-x-auto lg:flex-col snap-x snap-mandatory gap-16 lg:gap-24 pb-24 lg:pb-0 -mx-page px-page lg:mx-0 lg:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {branchesData.map((branch) => (
+                <div key={branch.id} className="shrink-0 w-[85vw] sm:w-[320px] lg:w-auto snap-center bg-charcoal-800 p-24 rounded-lg border border-charcoal-800/40 shadow-lg font-sans">
+                  <h4 className="text-[18px] font-serif font-bold text-white mb-12">{branch.name}</h4>
                 <div className="space-y-12 text-[14px] text-cream-300">
                   <p className="flex items-start gap-12">
                     <MapPin size={16} className="text-saffron-500 shrink-0 mt-1" />
@@ -97,8 +98,9 @@ export default function Contact() {
                     <span>{branch.hours}</span>
                   </p>
                 </div>
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Contact Form card */}

@@ -70,35 +70,40 @@ export default function Menu() {
       className="py-40 md:py-64 px-page bg-charcoal-900 min-h-screen"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Banner Hero Header */}
-        <div className="relative w-full rounded-2xl overflow-hidden mb-48 md:mb-64 shadow-2xl">
-          <img
-            src="/images/banner.jpg"
-            alt="Hotel Sri Punjab's Dhaba"
-            className="w-full h-[180px] sm:h-[260px] md:h-[320px] object-cover object-center"
-            loading="lazy"
-            onError={(e) => { e.target.src = '/images/banner.png' }}
-          />
-          <div className="absolute inset-0 bg-charcoal-950/50" />
-          <div className="absolute inset-0 flex items-center justify-center px-16">
-            <div
-              className="text-center px-16 py-16 md:px-32 md:py-24 rounded-2xl border border-white/20 shadow-2xl"
-              style={{
-                background: 'rgba(20, 16, 12, 0.45)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-              }}
+        {/* Menu Header (No Banner) */}
+        <div className="text-center mb-40 md:mb-48 pt-16">
+          <span className="text-[10px] md:text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-saffron-400 mb-6 block">
+            Traditional Menu
+          </span>
+          <h2 className="text-[28px] md:text-[44px] font-serif font-bold text-white leading-tight">
+            Explore Our Delicacies
+          </h2>
+          <p className="text-[13px] md:text-[16px] text-cream-400 font-sans mt-12 max-w-xl mx-auto leading-relaxed">
+            Slow-cooked tandoori naans, rich creamy butter chicken, spicy black pepper country recipes.
+          </p>
+        </div>
+
+        {/* Order Online Strip */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-12 mb-40 p-20 rounded-xl bg-charcoal-800/60 border border-charcoal-700/40">
+          <span className="text-[12px] font-sans font-semibold text-cream-400 uppercase tracking-widest">Order online via</span>
+          <div className="flex gap-10">
+            <a
+              href="https://www.swiggy.com/search?query=sri+punjabis+dhaba"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-6 bg-[#FC8019]/10 hover:bg-[#FC8019]/20 border border-[#FC8019]/30 hover:border-[#FC8019]/60 px-24 py-12 rounded-xl transition-all duration-200"
             >
-              <span className="text-[10px] md:text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-saffron-400 mb-6 block">
-                Traditional Menu
-              </span>
-              <h2 className="text-[24px] md:text-[44px] font-serif font-bold text-white leading-tight">
-                Explore Our Delicacies
-              </h2>
-              <p className="hidden sm:block text-[13px] md:text-[16px] text-cream-300 font-sans mt-8 max-w-xl">
-                Slow-cooked tandoori naans, rich creamy butter chicken, spicy black pepper country recipes.
-              </p>
-            </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-[#FC8019]"><path d="M12.034 24c-.376-.411-2.075-2.584-3.95-5.513-.547-.916-.901-1.63-.833-1.814.178-.48 3.355-.743 4.333-.308.298.132.29.307.29.409 0 .44-.022 1.619-.022 1.619a.441.441 0 1 0 .883-.002l-.005-2.939c0-.255-.278-.319-.331-.329-.511-.002-1.548-.006-2.661-.006-2.457 0-3.006.101-3.423-.172-.904-.591-2.383-4.577-2.417-6.819C3.849 4.964 5.723 2.225 8.362.868A8.13 8.13 0 0 1 12.026 0c4.177 0 7.617 3.153 8.075 7.209l.001.011c.084.981-5.321 1.189-6.39.904-.164-.044-.206-.212-.206-.284L13.5 4.996a.442.442 0 0 0-.884.002l.009 3.866a.33.33 0 0 0 .268.32l3.354-.001c1.79 0 2.542.207 3.042.588.333.254.461.739.349 1.37C18.633 16.755 12.273 23.71 12.034 24z"/></svg>
+              <span className="font-sans font-black tracking-[-0.05em] text-[15px] leading-none text-[#FC8019]">Swiggy</span>
+            </a>
+            <a
+              href="https://www.zomato.com/search?q=sri+punjabis+dhaba"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-[#E23744]/10 hover:bg-[#E23744]/20 border border-[#E23744]/30 hover:border-[#E23744]/60 px-24 py-12 rounded-xl transition-all duration-200"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Zomato_Logo.svg" alt="Zomato" className="h-[16px] -translate-y-[0.5px]" />
+            </a>
           </div>
         </div>
 
@@ -137,12 +142,12 @@ export default function Menu() {
           </div>
 
           {/* Category Tabs */}
-          <div className="flex flex-wrap gap-8 border-t border-charcoal-900/60 pt-20">
+          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto gap-8 border-t border-charcoal-900/60 pt-20 pb-8 -mx-16 px-16 md:mx-0 md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setCategory(cat.id)}
-                className={`px-16 py-8 rounded-md font-sans text-[14px] font-medium transition-all duration-200 ${category === cat.id
+                className={`shrink-0 px-16 py-8 rounded-md font-sans text-[14px] font-medium transition-all duration-200 ${category === cat.id
                   ? 'bg-saffron-500 text-white shadow-md shadow-saffron-900/10'
                   : 'bg-charcoal-900 text-cream-200 hover:bg-charcoal-700'
                   }`}
@@ -185,7 +190,7 @@ export default function Menu() {
                         transition={{ duration: 0.2 }}
                         className="h-full"
                       >
-                        <MenuItemCard item={item} showImage={false} />
+                        <MenuItemCard item={item} showImage={true} />
                       </motion.div>
                     ))
                   ) : (

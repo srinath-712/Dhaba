@@ -46,13 +46,13 @@ export default function Reviews() {
         </div>
 
         {/* Filter Toolbar */}
-        <div className="bg-charcoal-800 p-16 rounded-lg border border-charcoal-800/40 shadow-lg mb-40 flex items-center justify-between gap-16 flex-wrap font-sans">
-          <div className="flex items-center gap-12">
-            <span className="text-[14px] text-cream-350 text-cream-200 font-medium">Filter by Outlet:</span>
+        <div className="bg-charcoal-800 p-16 rounded-lg border border-charcoal-800/40 shadow-lg mb-40 flex flex-col sm:flex-row sm:items-center justify-between gap-16 font-sans">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 sm:gap-12 w-full sm:w-auto">
+            <span className="text-[14px] text-cream-200 font-medium whitespace-nowrap">Filter by Outlet:</span>
             <select
               value={selectedBranch}
               onChange={(e) => setSelectedBranch(e.target.value)}
-              className="px-12 md:px-16 py-8 rounded-md bg-charcoal-900 border border-charcoal-900/60 focus:outline-none focus:border-saffron-500 text-[14px] font-medium text-white cursor-pointer"
+              className="w-full sm:w-auto px-12 md:px-16 py-8 rounded-md bg-charcoal-900 border border-charcoal-900/60 focus:outline-none focus:border-saffron-500 text-[14px] font-medium text-white cursor-pointer"
             >
               <option value="all">All Outlets</option>
               {branchesData.map((branch) => (

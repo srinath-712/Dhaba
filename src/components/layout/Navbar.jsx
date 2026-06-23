@@ -19,13 +19,13 @@ export function Navbar() {
   const isActive = (path) => location.pathname === path
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#1A1A1A]/90 backdrop-blur-md border-b border-charcoal-800/50 px-page py-16">
+    <nav className="sticky top-0 z-50 bg-charcoal-900/95 backdrop-blur-md border-b border-charcoal-800/50 px-page py-16">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Logo */}
         <Link
           to="/"
           className="font-serif font-medium text-[16px] leading-none tracking-wide"
-          style={{ color: '#F5A623' }}
+          style={{ color: '#C9922A' }}
         >
           Sri Punjabi's Dhaba
         </Link>
@@ -68,7 +68,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#1A1A1A] border-t border-charcoal-800/80 mt-16 overflow-hidden"
+            className="md:hidden bg-charcoal-900 border-t border-charcoal-800/80 mt-16 overflow-hidden"
           >
             <div className="flex flex-col py-16 gap-8 px-8">
               {links.map((link) => (

@@ -19,7 +19,7 @@ export function AboutSection() {
   ]
 
   return (
-    <section ref={sectionRef} className="bg-charcoal-900 py-80 px-page">
+    <section ref={sectionRef} className="bg-charcoal-900 py-56 px-page">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-64 items-center">
 
         {/* Story details */}
@@ -42,15 +42,30 @@ export function AboutSection() {
             Every gravy is slowly simmered with fresh ground spices, real butter, and pure cream. From our highway dhaba roots in Gingee to our expanded dining experiences in Kovur and Tiruvannamalai, we bring the soul of the North to the hearts of the South.
           </p>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-3 gap-16">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="bg-charcoal-800 p-16 rounded-xl border border-charcoal-800/40 shadow-lg text-center">
-                <div className="flex justify-center mb-8">{stat.icon}</div>
-                <h4 className="text-[24px] font-bold text-white font-serif leading-none mb-4">{stat.value}</h4>
-                <p className="text-[12px] text-cream-400 font-sans font-medium">{stat.label}</p>
+          {/* Stats Marquee (Mobile) / Grid (Desktop) */}
+          <div className="overflow-hidden sm:overflow-visible -mx-page sm:mx-0">
+            <div className="flex sm:grid sm:grid-cols-3 w-max sm:w-auto animate-marquee sm:animate-none pl-16 sm:pl-0 hover:animate-play-paused focus:animate-play-paused">
+              {/* Original Set */}
+              <div className="flex gap-16 sm:contents">
+                {stats.map((stat, idx) => (
+                  <div key={idx} className="shrink-0 w-[60vw] sm:w-auto bg-charcoal-800 p-16 rounded-xl border border-charcoal-800/40 shadow-lg text-center">
+                    <div className="flex justify-center mb-8">{stat.icon}</div>
+                    <h4 className="text-[24px] font-bold text-white font-serif leading-none mb-4">{stat.value}</h4>
+                    <p className="text-[12px] text-cream-400 font-sans font-medium">{stat.label}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              {/* Duplicate Set (Mobile Only) */}
+              <div className="flex gap-16 sm:hidden ml-16" aria-hidden="true">
+                {stats.map((stat, idx) => (
+                  <div key={`${idx}-dup`} className="shrink-0 w-[60vw] sm:w-auto bg-charcoal-800 p-16 rounded-xl border border-charcoal-800/40 shadow-lg text-center">
+                    <div className="flex justify-center mb-8">{stat.icon}</div>
+                    <h4 className="text-[24px] font-bold text-white font-serif leading-none mb-4">{stat.value}</h4>
+                    <p className="text-[12px] text-cream-400 font-sans font-medium">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -62,9 +77,9 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           className="relative w-full mt-32 lg:mt-0"
         >
-          {/* On mobile: simple stacked images. On lg: overlapping parallax */}
-          <div className="block lg:hidden space-y-16">
-            <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-[4px] border-charcoal-900 aspect-[4/3] bg-charcoal-800">
+          {/* On mobile: staggered side-by-side. On lg: overlapping parallax */}
+          <div className="flex lg:hidden gap-12 pb-24 px-8">
+            <div className="relative w-1/2 rounded-2xl overflow-hidden shadow-xl border-[3px] border-charcoal-800 aspect-[4/5] bg-charcoal-900 translate-y-16">
               <img
                 src="/images/tandoor.png"
                 alt="Naan in Tandoor"
@@ -72,8 +87,12 @@ export function AboutSection() {
                 loading="lazy"
                 onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1585938338392-50a592202c72?w=800&auto=format&fit=crop&q=80' }}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 via-transparent to-transparent" />
+              <div className="absolute bottom-12 right-12 text-right text-white z-10">
+                <p className="text-[9px] uppercase font-semibold text-turmeric-400 tracking-wider drop-shadow-md max-w-[80px]">Traditional Clay Oven</p>
+              </div>
             </div>
-            <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-[4px] border-charcoal-900 aspect-[4/3] bg-charcoal-800">
+            <div className="relative w-1/2 rounded-2xl overflow-hidden shadow-xl border-[3px] border-charcoal-800 aspect-[4/5] bg-charcoal-900 -translate-y-8">
               <img
                 src="/images/tandoor 2.jpg"
                 alt="Tandoori Skewers"
@@ -81,6 +100,10 @@ export function AboutSection() {
                 loading="lazy"
                 onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544025162-81134a6212e5?w=800&auto=format&fit=crop&q=80' }}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 via-transparent to-transparent" />
+              <div className="absolute bottom-12 left-12 text-white z-10">
+                <h3 className="text-[13px] font-serif font-bold drop-shadow-md leading-tight max-w-[80px]">Smokey Specialties</h3>
+              </div>
             </div>
           </div>
 

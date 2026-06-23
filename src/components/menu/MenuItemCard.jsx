@@ -11,7 +11,7 @@ export function MenuItemCard({ item, showImage = true, showPrice = true }) {
       className="bg-charcoal-800 text-cream-100 rounded-lg overflow-hidden border border-charcoal-800/30 shadow-lg hover:shadow-[0_4px_20px_rgba(232,98,26,0.15)] hover:border-saffron-500 transition-all duration-300 flex flex-col h-full min-h-[140px]"
     >
       {showImage && item.image && (
-        <div className="relative h-44 w-full overflow-hidden bg-charcoal-900">
+        <div className="relative h-52 w-full overflow-hidden bg-charcoal-900">
           <img
             src={item.image}
             alt={item.name}
