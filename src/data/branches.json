@@ -14,7 +14,13 @@
     "priceMin": 200,
     "priceMax": 400,
     "hours": "Open until 11 PM",
-    "services": ["Dine-in", "Takeaway", "Delivery"],
+    "openTime": "11:00",
+    "closeTime": "23:00",
+    "services": [
+      "Dine-in",
+      "Takeaway",
+      "Delivery"
+    ],
     "mapsUrl": "https://maps.google.com/?q=Kovur+Colony,+Tharapakkam,+Chennai,+TN+600128",
     "mapsEmbedUrl": "https://maps.google.com/maps?q=Kovur%20Colony%20Tharapakkam%20Chennai%20TN%20600128&t=&z=14&ie=UTF8&iwloc=&output=embed"
   },
@@ -33,7 +39,13 @@
     "priceMin": 200,
     "priceMax": 400,
     "hours": "Open until 11 PM",
-    "services": ["Dine-in", "Takeaway", "Delivery"],
+    "openTime": "11:00",
+    "closeTime": "23:00",
+    "services": [
+      "Dine-in",
+      "Takeaway",
+      "Delivery"
+    ],
     "mapsUrl": "https://maps.google.com/?q=Gingee-Tindivanam+Rd,+Uranitangal,+Gingee,+TN+604202",
     "mapsEmbedUrl": "https://maps.google.com/maps?q=Gingee-Tindivanam%20Rd%20Uranitangal%20Gingee%20TN%20604202&t=&z=14&ie=UTF8&iwloc=&output=embed"
   },
@@ -52,7 +64,12 @@
     "priceMin": 150,
     "priceMax": 1000,
     "hours": "Open until 11 PM",
-    "services": ["Dine-in", "Takeaway"],
+    "openTime": "11:00",
+    "closeTime": "23:00",
+    "services": [
+      "Dine-in",
+      "Takeaway"
+    ],
     "mapsUrl": "https://maps.google.com/?q=Melathikkan,+Tiruvannamalai,+TN+606601",
     "mapsEmbedUrl": "https://maps.google.com/maps?q=Melathikkan%20Tiruvannamalai%20TN%20606601&t=&z=14&ie=UTF8&iwloc=&output=embed"
   }

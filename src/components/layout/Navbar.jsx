@@ -14,6 +14,7 @@ export function Navbar() {
     { name: 'Reviews', path: '/reviews' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Book a Table', path: '/book' },
   ]
 
   const isActive = (path) => location.pathname === path

@@ -14,6 +14,7 @@ import BranchDetail from './pages/BranchDetail'
 import Reviews from './pages/Reviews'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
+import BookTable from './pages/BookTable'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -27,6 +28,7 @@ function AnimatedRoutes() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/book" element={<BookTable />} />
       </Routes>
     </AnimatePresence>
   )

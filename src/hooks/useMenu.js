@@ -10,7 +10,7 @@ export function useMenu() {
     return menuData.filter((item) => {
       const matchesCategory = category === 'all' || item.category === category
       const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            item.description.toLowerCase().includes(searchQuery.toLowerCase())
+                            (item.description || '').toLowerCase().includes(searchQuery.toLowerCase())
       const matchesVeg = !vegOnly || item.isVeg === true
       return matchesCategory && matchesSearch && matchesVeg
     })

@@ -8,6 +8,7 @@ import { ReviewCard } from '../components/reviews/ReviewCard'
 import { StarRating } from '../components/ui/StarRating'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
+import { isBranchOpen } from '../lib/hours'
 
 export default function BranchDetail() {
   const { slug } = useParams()
@@ -31,6 +32,7 @@ export default function BranchDetail() {
 
   // Filter reviews matching this specific branch slug
   const branchReviews = reviewsData.filter((r) => r.branchSlug === slug)
+  const isOpen = isBranchOpen(branch.openTime, branch.closeTime)
 
   return (
     <motion.div
@@ -55,8 +57,8 @@ export default function BranchDetail() {
                 <Badge variant={branch.type.toLowerCase().includes('dhaba') ? 'turmeric' : 'saffron'}>
                   {branch.type}
                 </Badge>
-                <Badge variant="veg">
-                  Open now
+                <Badge variant={isOpen ? 'veg' : 'nonveg'}>
+                  {isOpen ? 'Open now' : 'Closed'}
                 </Badge>
               </div>
               <h2 className="text-[32px] md:text-[36px] font-serif font-semibold text-white leading-tight mb-8">

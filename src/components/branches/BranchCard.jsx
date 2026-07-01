@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, Star, MapPin } from 'lucide-react'
 
+import { isBranchOpen } from '../../lib/hours'
+
 // Fallback restaurant photo per branch
 const BRANCH_PHOTOS = {
   kovur: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80',
@@ -20,6 +22,7 @@ export function BranchCard({ branch }) {
   const photo = BRANCH_PHOTOS[branch.slug] || BRANCH_PHOTOS.kovur
   const fullStars = Math.floor(branch.rating)
   const hasHalf = branch.rating - fullStars >= 0.5
+  const isOpen = isBranchOpen(branch.openTime, branch.closeTime)
 
   return (
     <motion.div
@@ -39,11 +42,18 @@ export function BranchCard({ branch }) {
         {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-charcoal-950/20 to-transparent" />
 
-        {/* Open now badge */}
-        <div className="absolute top-12 left-12 flex items-center gap-6 bg-green-500/90 backdrop-blur-sm text-white text-[11px] font-sans font-bold px-10 py-4 rounded-full">
-          <span className="w-[6px] h-[6px] bg-white rounded-full animate-pulse" />
-          Open now
-        </div>
+        {/* Dynamic status badge */}
+        {isOpen ? (
+          <div className="absolute top-12 left-12 flex items-center gap-6 bg-green-500/90 backdrop-blur-sm text-white text-[11px] font-sans font-bold px-10 py-4 rounded-full">
+            <span className="w-[6px] h-[6px] bg-white rounded-full animate-pulse" />
+            Open now
+          </div>
+        ) : (
+          <div className="absolute top-12 left-12 flex items-center gap-6 bg-red-600/90 backdrop-blur-sm text-white text-[11px] font-sans font-bold px-10 py-4 rounded-full">
+            <span className="w-[6px] h-[6px] bg-white/60 rounded-full" />
+            Closed
+          </div>
+        )}
 
         {/* City tag */}
         <div className="absolute bottom-12 left-12 text-white">

@@ -91,10 +91,19 @@ export function HeroSection() {
             </button>
           </Link>
 
-          {/* Secondary CTA: Find a Branch */}
+          {/* Secondary CTA: Book a Table */}
+          <Link to="/book" className="w-full sm:w-auto">
+            <button 
+              className="w-full sm:w-auto px-32 py-16 flex items-center justify-center gap-8 rounded text-[13px] font-sans font-bold uppercase tracking-[0.1em] text-white/90 border border-saffron-500/60 hover:bg-saffron-500 hover:text-white transition-all duration-300 hover:-translate-y-2"
+            >
+              Book a Table
+            </button>
+          </Link>
+
+          {/* Tertiary CTA: Find a Branch */}
           <Link to="/branches" className="w-full sm:w-auto">
             <button 
-              className="w-full sm:w-auto px-32 py-16 flex items-center justify-center gap-8 rounded text-[13px] font-sans font-bold uppercase tracking-[0.1em] text-white/80 border border-white/20 hover:bg-white hover:text-charcoal-900 transition-all duration-300 hover:-translate-y-2"
+              className="w-full sm:w-auto px-32 py-16 flex items-center justify-center gap-8 rounded text-[13px] font-sans font-bold uppercase tracking-[0.1em] text-white/75 border border-white/10 hover:bg-white/10 hover:text-white transition-all duration-300 hover:-translate-y-2"
             >
               Find a Branch
             </button>
