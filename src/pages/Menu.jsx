@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Info } from 'lucide-react'
 import { useMenu } from '../hooks/useMenu'
 import { MenuItemCard } from '../components/menu/MenuItemCard'
+import SEO from '../components/layout/SEO'
 
 function MenuSkeleton() {
   return (
@@ -69,15 +70,20 @@ export default function Menu() {
       transition={{ duration: 0.3 }}
       className="py-40 md:py-64 px-page bg-charcoal-900 min-h-screen"
     >
+      <SEO 
+        title="Traditional Menu | Best Butter Chicken, Garlic Naan & Biryani"
+        description="Explore our authentic Punjabi food menu featuring Butter Chicken, Paneer Butter Masala, Dal Makhani, Chicken Biryani, hot Butter Naan, and Lassi."
+        keywords="Butter Chicken, Chicken Tikka, Tandoori Chicken, Paneer Butter Masala, Dal Makhani, Butter Naan, Garlic Naan, Chicken Biryani, Veg Biryani, Jeera Rice, Tandoori Roti, Lassi, North Indian Thali"
+      />
       <div className="max-w-7xl mx-auto">
         {/* Menu Header (No Banner) */}
         <div className="text-center mb-40 md:mb-48 pt-16">
           <span className="text-[10px] md:text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-saffron-400 mb-6 block">
             Traditional Menu
           </span>
-          <h2 className="text-[28px] md:text-[44px] font-serif font-bold text-white leading-tight">
+          <h1 className="text-[28px] md:text-[44px] font-serif font-bold text-white leading-tight">
             Explore Our Delicacies
-          </h2>
+          </h1>
           <p className="text-[13px] md:text-[16px] text-cream-400 font-sans mt-12 max-w-xl mx-auto leading-relaxed">
             Slow-cooked tandoori naans, rich creamy butter chicken, spicy black pepper country recipes.
           </p>

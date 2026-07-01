@@ -49,18 +49,18 @@ export function HeroSection() {
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-serif text-[44px] md:text-[72px] font-medium text-white tracking-tight leading-[1.1]"
+          className="font-serif text-[44px] md:text-[72px] font-medium text-white tracking-tight leading-[1.1] flex flex-col items-center"
         >
-          Hotel Sri <span className="text-turmeric-500 italic font-serif">Punjabi's</span>
+          <span>Hotel Sri <span className="text-turmeric-500 italic font-serif">Punjabi's</span></span>
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-sans font-bold text-[36px] md:text-[60px] text-saffron-500 uppercase tracking-[0.15em] mt-8 mb-16 block"
+          >
+            Dhaba
+          </motion.span>
         </motion.h1>
-        <motion.h2
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-sans font-bold text-[36px] md:text-[60px] text-saffron-500 uppercase tracking-[0.15em] mt-8 mb-16"
-        >
-          Dhaba
-        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 15 }}

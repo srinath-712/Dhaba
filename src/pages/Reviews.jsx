@@ -6,6 +6,7 @@ import reviewsData from '../data/reviews.json'
 import branchesData from '../data/branches.json'
 import { ReviewCard } from '../components/reviews/ReviewCard'
 import { Button } from '../components/ui/Button'
+import SEO from '../components/layout/SEO'
 
 export default function Reviews() {
   const [selectedBranch, setSelectedBranch] = useState('all')
@@ -23,6 +24,11 @@ export default function Reviews() {
       transition={{ duration: 0.3 }}
       className="py-40 md:py-64 px-page bg-charcoal-900 min-h-screen"
     >
+      <SEO 
+        title="Guest Reviews | Best Punjabi & Family Restaurant"
+        description="Read guest reviews about the best Butter Chicken, warm garlic naans, and family dining experiences at Hotel Sri Punjabi's Dhaba in Tamil Nadu."
+        keywords="Punjabi Restaurant Near Me, Best Dhaba Near Me, Best Food Near Me, Restaurant Near Me, Family Restaurant Near Me, Dinner Near Me, Lunch Near Me"
+      />
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -31,9 +37,9 @@ export default function Reviews() {
             <span className="text-[12px] font-sans font-bold uppercase tracking-wider text-saffron-500 mb-8 block">
               Guest Testimonials
             </span>
-            <h2 className="text-[36px] md:text-[44px] font-serif font-bold text-white">
+            <h1 className="text-[36px] md:text-[44px] font-serif font-bold text-white">
               Customer Reviews
-            </h2>
+            </h1>
             <p className="text-[16px] text-cream-300 font-sans mt-8">
               Read real dining reviews from customers across all our outlets in Chennai and Tamil Nadu.
             </p>

@@ -9,6 +9,7 @@ import { StarRating } from '../components/ui/StarRating'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
 import { isBranchOpen } from '../lib/hours'
+import SEO from '../components/layout/SEO'
 
 export default function BranchDetail() {
   const { slug } = useParams()
@@ -34,6 +35,30 @@ export default function BranchDetail() {
   const branchReviews = reviewsData.filter((r) => r.branchSlug === slug)
   const isOpen = isBranchOpen(branch.openTime, branch.closeTime)
 
+  const seoConfig = {
+    kovur: {
+      title: "Best Punjabi Restaurant in Kovur | Hotel Sri Punjabi's Dhaba",
+      description: "Welcome to our Kovur branch. The best Punjabi & North Indian family restaurant in Kovur, Chennai. Enjoy authentic food, dine-in, and delivery.",
+      keywords: "Best Restaurant in Kovur, Best Punjabi Restaurant in Kovur, North Indian Restaurant Kovur, Family Restaurant Kovur, Dhaba in Kovur"
+    },
+    gingee: {
+      title: "Best Punjabi Restaurant in Gingee | Restaurant near Gingee Fort",
+      description: "Visit our Gingee branch on Gingee-Tindivanam Rd. The best Punjabi restaurant near Gingee Fort. Perfect highway stop for lunch and dinner.",
+      keywords: "Best Restaurant in Gingee, Best Punjabi Restaurant in Gingee, Family Restaurant Gingee, Food near Gingee Fort, Lunch in Gingee, Dinner in Gingee, Best North Indian Restaurant in Gingee, Highway Dhaba near Gingee"
+    },
+    tiruvannamalai: {
+      title: "Best Punjabi Restaurant Tiruvannamalai | Near Temple",
+      description: "Visit our Tiruvannamalai branch. The best Punjabi family restaurant near Arunachaleswarar Temple. Authentic food, open late, perfect for families.",
+      keywords: "Best Punjabi Restaurant Tiruvannamalai, North Indian Restaurant Tiruvannamalai, Family Restaurant Tiruvannamalai, Restaurant near Arunachaleswarar Temple, Best Dinner in Tiruvannamalai, Punjabi Food Tiruvannamalai, Best Butter Chicken in Tiruvannamalai, Punjabi Restaurant open late in Tiruvannamalai"
+    }
+  }
+
+  const seo = seoConfig[slug] || {
+    title: branch.name,
+    description: `Visit Hotel Sri Punjabi's Dhaba in ${branch.city}. Address: ${branch.address}`,
+    keywords: `${branch.name}, Dhaba, Punjabi Restaurant`
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,6 +67,7 @@ export default function BranchDetail() {
       transition={{ duration: 0.3 }}
       className="py-40 md:py-64 bg-charcoal-900 min-h-screen"
     >
+      <SEO title={seo.title} description={seo.description} keywords={seo.keywords} />
       <div className="max-w-7xl mx-auto px-page">
         {/* Back Link */}
         <Link to="/branches" className="inline-flex items-center gap-8 text-saffron-500 hover:text-saffron-700 transition-colors font-medium mb-32">
@@ -61,9 +87,9 @@ export default function BranchDetail() {
                   {isOpen ? 'Open now' : 'Closed'}
                 </Badge>
               </div>
-              <h2 className="text-[32px] md:text-[36px] font-serif font-semibold text-white leading-tight mb-8">
+              <h1 className="text-[32px] md:text-[36px] font-serif font-semibold text-white leading-tight mb-8">
                 {branch.name}
-              </h2>
+              </h1>
               <div className="flex items-center gap-12 mb-24">
                 <StarRating rating={branch.rating} size={16} />
                 <span className="text-[13px] text-cream-400">({branch.reviewCount} total ratings)</span>

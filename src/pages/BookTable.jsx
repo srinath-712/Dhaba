@@ -5,6 +5,7 @@ import { Calendar, Clock, Users, MessageSquare, Utensils, Send, ArrowLeft } from
 import { Link } from 'react-router-dom'
 import branchesData from '../data/branches.json'
 import { Button } from '../components/ui/Button'
+import SEO from '../components/layout/SEO'
 
 export default function BookTable() {
   const today = new Date()
@@ -100,6 +101,11 @@ Please confirm if a table is available. Thank you!`
       transition={{ duration: 0.3 }}
       className="py-40 md:py-64 bg-charcoal-900 min-h-screen font-sans"
     >
+      <SEO 
+        title="Book a Table | Family Restaurant on Chennai Highway"
+        description="Reserve your table instantly via WhatsApp at our Kovur, Gingee, or Tiruvannamalai outlets. Best family restaurant between Chennai and Tiruvannamalai."
+        keywords="Best Family Restaurant between Chennai and Tiruvannamalai, Highway Dhaba near Gingee, Highway Restaurant Near Me, Punjabi Restaurant Near Me, Best Dhaba Near Me, Family Restaurant Near Me, Dinner Near Me, Lunch Near Me"
+      />
       <Toaster position="top-right" />
       <div className="max-w-4xl mx-auto px-page">
         {/* Back Link */}
@@ -112,9 +118,9 @@ Please confirm if a table is available. Thank you!`
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-saffron-500 mb-8 block">
             Instant Reservation
           </span>
-          <h2 className="text-[32px] md:text-[44px] font-serif font-bold text-white">
+          <h1 className="text-[32px] md:text-[44px] font-serif font-bold text-white">
             Book a Table
-          </h2>
+          </h1>
           <p className="text-[14px] md:text-[16px] text-cream-300 mt-8 max-w-lg mx-auto leading-relaxed">
             Reserve your table in seconds. Choose your outlet, details, and finalize your booking instantly via WhatsApp with the branch manager.
           </p>

@@ -5,6 +5,7 @@ import { Send, MapPin, Phone, Clock } from 'lucide-react'
 import branchesData from '../data/branches.json'
 import { sendContactForm } from '../lib/emailjs'
 import { Button } from '../components/ui/Button'
+import SEO from '../components/layout/SEO'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -61,6 +62,11 @@ export default function Contact() {
       transition={{ duration: 0.3 }}
       className="py-40 md:py-64 bg-charcoal-900 min-h-screen"
     >
+      <SEO 
+        title="Contact & Catering | Villupuram, Tindivanam & Chennai Highway"
+        description="Get in touch with Hotel Sri Punjabi's Dhaba. Inquire about bulk outdoor catering or party bookings in Villupuram, Tindivanam, Gingee, and Tiruvannamalai."
+        keywords="Best Punjabi Restaurant Villupuram, North Indian Restaurant Villupuram, Family Restaurant Villupuram, Best Restaurant Villupuram, Best Punjabi Restaurant Tindivanam, North Indian Restaurant Tindivanam, Family Restaurant Tindivanam, Authentic Punjabi Food in Villupuram, Best Restaurant for Families in Villupuram"
+      />
       <Toaster position="top-right" />
       <div className="max-w-7xl mx-auto px-page">
         {/* Header */}
@@ -68,9 +74,9 @@ export default function Contact() {
           <span className="text-[12px] font-sans font-bold uppercase tracking-wider text-saffron-500 mb-8 block">
             Get in Touch
           </span>
-          <h2 className="text-[36px] md:text-[44px] font-serif font-bold text-white">
+          <h1 className="text-[36px] md:text-[44px] font-serif font-bold text-white">
             Contact & Feedback
-          </h2>
+          </h1>
           <p className="text-[16px] text-cream-300 font-sans mt-8">
             Have a question, feedback, or catering query? Select your preferred outlet and reach out to us!
           </p>

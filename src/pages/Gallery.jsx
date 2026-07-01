@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import SEO from '../components/layout/SEO'
 
 export default function Gallery() {
   const [selectedAlbumId, setSelectedAlbumId] = useState(null)
@@ -89,15 +90,20 @@ export default function Gallery() {
       transition={{ duration: 0.3 }}
       className="py-40 md:py-64 px-page bg-charcoal-900 min-h-screen"
     >
+      <SEO 
+        title="Photo Gallery | Authentic Punjabi Food & Ambiance"
+        description="A visual tour of our smoky clay oven tandoor cooking, signature butter chicken, and warm family dining spaces in Kovur, Gingee, and Tiruvannamalai."
+        keywords="Punjabi Dhaba Photos, Tandoori Chicken Gallery, Restaurant Ambiance, Food Photos"
+      />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-32 md:mb-48">
           <span className="text-[12px] font-sans font-bold uppercase tracking-wider text-saffron-500 mb-8 block">
             Visual Experience
           </span>
-          <h2 className="text-[36px] md:text-[44px] font-serif font-bold text-white mb-16">
+          <h1 className="text-[36px] md:text-[44px] font-serif font-bold text-white mb-16">
             Dhaba Food Gallery
-          </h2>
+          </h1>
           <p className="text-[16px] text-cream-300 font-sans">
             Explore our curated collections of smoking clay ovens, authentic dish presentations, and friendly local dining spaces.
           </p>
